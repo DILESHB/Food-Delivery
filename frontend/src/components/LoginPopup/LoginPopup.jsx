@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const {url, setToken } = useContext(StoreContext);
+  const { url, setToken } = useContext(StoreContext);
   const [currentState, setCurrentState] = useState("Login");
   const [data, setData] = useState({
     name: "",
@@ -34,7 +34,7 @@ const LoginPopup = ({ setShowLogin }) => {
       localStorage.setItem("token", response.data.token);
       toast.success("Login Successfully")
       setShowLogin(false);
-    }else{
+    } else {
       toast.error(response.data.message);
     }
   };
